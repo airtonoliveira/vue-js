@@ -1,0 +1,28 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <!-- v-once: Le o valor apenas uma vez -->
+    <p v-once>{{ titulo }}</p>
+    <p airton-bind="Airton">{{ saudacao() }}</p>
+    <!--document.querySelector("[airton-bind]"); -->
+    <a v-bind:href="link">Google</a>    
+    <hr>
+    <p v-html="linkHtml"></p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+    data: {
+        titulo: 'Testando VueJS!',
+        link:'http://www.google.com.br',
+        linkHtml: '<a href="http://www.google.com.br">Google</a>'
+    },
+    methods: {
+        saudacao: function() {
+           this.titulo = 'Bom dia';
+           return this.titulo;
+        }
+    }
+    });
+</script>

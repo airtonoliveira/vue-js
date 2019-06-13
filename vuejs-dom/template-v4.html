@@ -1,0 +1,23 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="app">
+    <p>{{ titulo }}</p>
+    <p airton-bind="Airton">{{ saudacao() }}</p>
+    <!--document.querySelector("[airton-bind]"); -->
+    <a v-bind:href="link">Google</a>    
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+    data: {
+        titulo: 'Testando VueJS!',
+        link:'http://www.google.com.br'
+    },
+    methods: {
+        saudacao: function() {
+           return this.titulo;
+        }
+    }
+    });
+</script>
